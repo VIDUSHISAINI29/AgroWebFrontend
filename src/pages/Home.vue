@@ -1,7 +1,22 @@
 <script setup>
-import { useRoute } from "vue-router";
+import axios from "axios";
+import { onMounted, ref, watch } from "vue";
 
-const route = useRoute();
+const cropsRecord = ref(null);
+const fetchRecord = async() => {
+  try {
+    const result = await axios.get('http://localhost:4024/crops-data');
+    return result.data;
+  } catch (error) {
+    console.log("Error in fetchin record", error);
+  }
+}
+onMounted(() => {
+  cropsRecord.value = fetchRecord();
+  console.log('crops = ', cropsRecord.value );
+  
+})
+
 </script>
  
 <template>
