@@ -1,6 +1,7 @@
 <script setup>
 import axios from "axios";
 import { onMounted, ref, watch } from "vue";
+import Navbar from '@/layout/Navbar.vue'
 
 const cropsRecord = ref(null);
 const fetchRecord = async() => {
@@ -21,9 +22,10 @@ onMounted(() => {
  
 <template>
    <div>
-      <div class="wineGlassTable tw-flex tw-justify-end tw-items-center tw-h-[80vh]">
-        <div>
-          <div class="navbar"></div>
+      <div class="wineGlassTable tw-flex tw-flex-col  tw-items-end tw-h-[80vh]">
+        <Navbar />
+        <div class="tw-w-full tw-flex tw-justify-end tw-items-end tw-h-[50vh]">
+          
          <span class="text  tw-block tw-w-[570px] tw-m-3 tw-text-[4rem]">
           Fields whisper stories of resilience, growth, and hope.
          </span>
