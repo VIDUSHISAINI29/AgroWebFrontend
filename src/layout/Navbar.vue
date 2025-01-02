@@ -70,7 +70,7 @@
        
       </div>
       <div>
-         <span class=" tw-cursor-pointer tw-rounded-xl  tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-font-semibold tw-py-2 tw-px-3 tw-text-[#61a622]">Logout</span>
+         <span class=" tw-cursor-pointer tw-rounded-[4px]  tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-font-semibold tw-py-2 tw-px-3 tw-text-[#61a622]">Logout</span>
       </div>
    </div>
 </template>
