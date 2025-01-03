@@ -6,6 +6,11 @@ export default {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
+  safelist: [
+    {
+      pattern: /tw-translate-x-\[.*\]/, // Safelist dynamic translate-x classes
+    },
+  ],
   theme: {
     extend: {
       translate: {

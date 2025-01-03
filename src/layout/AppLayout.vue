@@ -4,7 +4,7 @@ import Navbar from './Navbar.vue'
 </script>
 
 <template>
-   <div>
+   <div class="tw-select-none">
      <Navbar />
       <router-view />
    </div>
