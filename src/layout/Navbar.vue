@@ -18,9 +18,9 @@
       <div class="tw-flex tw-gap-5 tw-font-semibold tw-text-[#3e7111]">
         <div class="tw-group tw-relative tw-flex tw-cursor-pointer tw-flex-col tw-transition-colors            tw-duration-300 ">
             <router-link
-               to="/all-crops"
+               to="/home"
                class=" tw-w-20 tw-text-center tw-font-semibold tw-text-[#3e7111] tw-transition-all tw-duration-500 ">
-               All Crops
+               Home
             </router-link>
             <div class="tw-flex">
                <span

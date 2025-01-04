@@ -21,6 +21,11 @@ const router = createRouter({
                name: "region-wise",
                component: () => import("@/pages/RegionWise.vue"),
             },
+            {
+               path: "/test",
+               name: "test",
+               component: () => import("@/pages/Test.vue"),
+            },
          ],
       },
    ],
