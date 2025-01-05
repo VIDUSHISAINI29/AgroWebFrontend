@@ -31,7 +31,7 @@
          </div>
          <div class="tw-group tw-relative tw-flex tw-cursor-pointer tw-flex-col tw-transition-colors            tw-duration-300 ">
             <router-link
-               to="/crops-wise"
+               to="/crop-wise"
                class=" tw-w-20 tw-text-center tw-font-semibold tw-text-[#3e7111] tw-transition-all tw-duration-500 ">
                Crop-Wise
             </router-link>
