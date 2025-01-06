@@ -169,9 +169,9 @@ onMounted(async () => {
  
        <div class="tw-bg-[#3e7111] wrapper tw-my-10 tw-overflow-visible tw-w-[92.5%] tw-rounded-sm tw-relative tw-justify-center  tw-flex tw-flex-col tw-p-5">
          <span class="tw-font-bold tw-text-lg tw-px-3 tw-text-white">Crops Of Silt Soil</span>
-         <i  @click="translateSlideLeft('#carousel4')" class="ri-arrow-left-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-left-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
+         <i  @click="translateSlideLeft('#carousel5')" class="ri-arrow-left-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-left-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
  
-         <div id="carousel4" @mouseup="isDragging = false" @mousedown="isDragging = true;" @mousemove="dragging" :class="['tw-flex tw-select-none tw-cursor-grab tw-w-full tw-overflow-hidden  tw-items-center tw-transition-transform    tw-gap-7  tw-p-2', translateScale]">
+         <div id="carousel5" @mouseup="isDragging = false" @mousedown="isDragging = true;" @mousemove="dragging" :class="['tw-flex tw-select-none tw-cursor-grab tw-w-full tw-overflow-hidden  tw-items-center tw-transition-transform    tw-gap-7  tw-p-2', translateScale]">
           
            <div v-for="(crop, index) in siltSoilRecord" id="item" :class="['tw-bg-white card tw-rounded-sm  tw-transform  tw-p-1 tw-overflow-hidden tw-flex-shrink-0 tw-flex tw-justify-center tw-flex-col tw-items-start', translateScale ]">
            <img class="tw-w-48 tw-h-48 hover:tw-scale-105  tw-duration-500 tw-p-1 tw-cursor-pointer" :src="crop.image" alt="cropImage">
@@ -182,14 +182,14 @@ onMounted(async () => {
             </div>
         </div>
          </div>
-         <i @click="translateSlideRight('#carousel4')" class="ri-arrow-right-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-right-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
+         <i @click="translateSlideRight('#carousel5')" class="ri-arrow-right-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-right-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
        </div>
  
        <div class="tw-bg-[#3e7111] wrapper tw-my-10 tw-overflow-visible tw-w-[92.5%] tw-rounded-sm tw-relative tw-justify-center  tw-flex tw-flex-col tw-p-5">
          <span class="tw-font-bold tw-text-lg tw-px-3 tw-text-white">Crops Of Chalky Soil</span>
-         <i  @click="translateSlideLeft('#carousel4')" class="ri-arrow-left-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-left-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
+         <i  @click="translateSlideLeft('#carousel6')" class="ri-arrow-left-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-left-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
  
-         <div id="carousel4" @mouseup="isDragging = false" @mousedown="isDragging = true;" @mousemove="dragging" :class="['tw-flex tw-select-none tw-cursor-grab tw-w-full tw-overflow-hidden  tw-items-center tw-transition-transform    tw-gap-7  tw-p-2', translateScale]">
+         <div id="carousel6" @mouseup="isDragging = false" @mousedown="isDragging = true;" @mousemove="dragging" :class="['tw-flex tw-select-none tw-cursor-grab tw-w-full tw-overflow-hidden  tw-items-center tw-transition-transform    tw-gap-7  tw-p-2', translateScale]">
           
            <div v-for="(crop, index) in chalkySoilRecord" id="item" :class="['tw-bg-white card tw-rounded-sm  tw-transform  tw-p-1 tw-overflow-hidden tw-flex-shrink-0 tw-flex tw-justify-center tw-flex-col tw-items-start', translateScale ]">
            <img class="tw-w-48 tw-h-48 hover:tw-scale-105  tw-duration-500 tw-p-1 tw-cursor-pointer" :src="crop.image" alt="cropImage">
@@ -200,7 +200,7 @@ onMounted(async () => {
             </div>
         </div>
          </div>
-         <i @click="translateSlideRight('#carousel4')" class="ri-arrow-right-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-right-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
+         <i @click="translateSlideRight('#carousel6')" class="ri-arrow-right-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-right-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
        </div>
  
        <div class="tw-h-screen"></div>

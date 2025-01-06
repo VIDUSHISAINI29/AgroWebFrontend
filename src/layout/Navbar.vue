@@ -68,6 +68,30 @@
                   class="tw-absolute tw-h-[2px] tw-w-12  tw-translate-x-14 tw-transform tw-rounded-br-sm tw-rounded-tr-sm tw-bg-[#79c8f5] tw-transition-transform tw-duration-300 group-hover:tw-translate-x-12 group-hover:tw-bg-[#3e7111]"></span> 
         </div>
          </div>
+         <div class="tw-group tw-relative tw-flex tw-cursor-pointer tw-flex-col tw-transition-colors            tw-duration-300 ">
+            <a href="#about-us"
+               class=" tw-w-24 tw-text-center tw-font-semibold tw-text-[#3e7111] tw-transition-all tw-duration-500 ">
+               About Us
+            </a>
+            <div class="tw-flex">
+               <span
+                  class="tw-absolute tw-h-[2px] tw-w-12 -tw-translate-x-1 tw-transform tw-rounded-bl-sm tw-rounded-tl-sm tw-bg-[#79c8f5] tw-transition-transform tw-duration-300 group-hover:tw-translate-x-0 group-hover:tw-bg-[#3e7111]"></span>
+               <span
+                  class="tw-absolute tw-h-[2px] tw-w-12  tw-translate-x-14 tw-transform tw-rounded-br-sm tw-rounded-tr-sm tw-bg-[#79c8f5] tw-transition-transform tw-duration-300 group-hover:tw-translate-x-12 group-hover:tw-bg-[#3e7111]"></span> 
+        </div>
+         </div>
+         <div class="tw-group tw-relative tw-flex tw-cursor-pointer tw-flex-col tw-transition-colors            tw-duration-300 ">
+            <a href="#services"
+               class=" tw-w-24 tw-text-center tw-font-semibold tw-text-[#3e7111] tw-transition-all tw-duration-500 ">
+               Services
+            </a>
+            <div class="tw-flex">
+               <span
+                  class="tw-absolute tw-h-[2px] tw-w-12 -tw-translate-x-1 tw-transform tw-rounded-bl-sm tw-rounded-tl-sm tw-bg-[#79c8f5] tw-transition-transform tw-duration-300 group-hover:tw-translate-x-0 group-hover:tw-bg-[#3e7111]"></span>
+               <span
+                  class="tw-absolute tw-h-[2px] tw-w-12  tw-translate-x-14 tw-transform tw-rounded-br-sm tw-rounded-tr-sm tw-bg-[#79c8f5] tw-transition-transform tw-duration-300 group-hover:tw-translate-x-12 group-hover:tw-bg-[#3e7111]"></span> 
+        </div>
+         </div>
        
       </div>
       <div>

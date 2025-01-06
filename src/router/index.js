@@ -24,7 +24,7 @@ const router = createRouter({
             {
                path: "/region-wise",
                name: "region-wise",
-               component: () => import("@/pages/RegionWise2.vue"),
+               component: () => import("@/pages/RegionWise.vue"),
             },
             {
                path: "/soil-wise",
