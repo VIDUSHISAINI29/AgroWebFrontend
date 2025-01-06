@@ -2,6 +2,7 @@
 import Navbar from './Navbar.vue'
 import AboutUs from '@/components/AboutUs.vue'
 import Services from '@/components/Services.vue'
+import Footer from './Footer.vue'
 
 </script>
 
@@ -11,6 +12,7 @@ import Services from '@/components/Services.vue'
       <router-view />
       <Services />
       <AboutUs />
+      <Footer />
    </div>
 </template>
 
