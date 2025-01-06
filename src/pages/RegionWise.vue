@@ -110,7 +110,7 @@ onMounted(async () => {
        </div>
 
  
-       <div class="tw-h-screen"></div>
+     
     </div>
  </template> 
  

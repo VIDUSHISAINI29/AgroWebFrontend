@@ -203,7 +203,6 @@ onMounted(async () => {
          <i @click="translateSlideRight('#carousel6')" class="ri-arrow-right-s-line tw-z-10 tw-cursor-pointer tw-flex tw-justify-center -tw-right-4 tw-items-center tw-rounded-[50%] tw-font-semibold tw-text-2xl tw-bg-white tw-absolute tw-w-10 tw-h-10 tw-text-[#3e7111]"></i>
        </div>
  
-       <div class="tw-h-screen"></div>
     </div>
  </template> 
  
