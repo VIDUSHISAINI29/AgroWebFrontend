@@ -12,14 +12,14 @@ const router = createRouter({
          component: () => import("@/layout/AppLayout.vue"),
          children: [
             {
-               path: "home",
+               path: "/home",
                name: "home",
-               component: () => import("@/pages/Home.vue"),
+               component: () => import("@/pages/Home/Home.vue"),
                children:[
                   {
                      path: ":uri",
                      name: "cropDetails",
-                     component: () => import("@/pages/CropDetails.vue"),
+                     component: () => import("@/components/CropDetails.vue"),
                      props: true,
                   },
                ]
@@ -27,12 +27,12 @@ const router = createRouter({
             {
                path: "/crop-wise",
                name: "crop-wise",
-               component: () => import("@/pages/CropWise.vue"),
+               component: () => import("@/pages/Crops/CropWise.vue"),
                children:[
                   {
                      path: ":uri",
                      name: "cropDetails",
-                     component: () => import("@/pages/CropDetails.vue"),
+                     component: () => import("@/pages/Crops/CropDetails.vue"),
                      props: true,
                   },
                ]
@@ -40,25 +40,26 @@ const router = createRouter({
             {
                path: "/region-wise",
                name: "region-wise",
-               component: () => import("@/pages/RegionWise.vue"),
+               component: () => import("@/pages/Region/RegionWise.vue"),
                children:[
                   {
                      path: ":uri",
                      name: "cropDetails",
-                     component: () => import("@/pages/CropDetails.vue"),
+                     component: () => import("@/pages/Region/CropDetails.vue"),
                      props: true,
                   },
+
                ]
             },
             {
                path: "/soil-wise",
                name: "soil-wise",
-               component: () => import("@/pages/SoilWise.vue"),
+               component: () => import("@/pages/Soil/SoilWise.vue"),
                children:[
                   {
                      path: ":uri",
                      name: "cropDetails",
-                     component: () => import("@/pages/CropDetails.vue"),
+                     component: () => import("@/pages/Soil/CropDetails.vue"),
                      props: true,
                   },
                ]
@@ -68,6 +69,7 @@ const router = createRouter({
                name: "test",
                component: () => import("@/pages/Test.vue"),
             },
+           
          ],
       },
    ],

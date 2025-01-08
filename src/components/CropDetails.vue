@@ -37,7 +37,7 @@ console.log("hey details");
 </script>
 <template>
 
-
+<div class="tw-bg-pink-400 tw-p-2">Hey details</div>
 
 </template>
 <style scoped>

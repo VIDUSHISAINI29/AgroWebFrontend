@@ -45,8 +45,8 @@ onMounted(async () => {
  
 <template>
  
-  <div v-if="!route.params.uri" class="tw-flex tw-flex-col tw-bg-[#e1fcc8] tw-items-center tw-w-full">
-    <div class=" tw-my-10  tw-w-full  tw-rounded-sm tw-justify-center  tw-flex tw-flex-col tw-p-5">
+  <div  class="tw-flex tw-flex-col tw-bg-[#e1fcc8] tw-items-center tw-w-full">
+    <div v-if="!route.params.uri" class=" tw-my-10  tw-w-full  tw-rounded-sm tw-justify-center  tw-flex tw-flex-col tw-p-5">
          <div :class="['tw-flex tw-w-full tw-overflow-hidden tw-items-center tw-transition-transform    tw-gap-7 tw-relative wrapper tw-h-[50vh]  tw-p-2', translateScale]">
           
            <div v-for="(crop, index) in cropsRecord"  :id="'item' + index" :class="[' tw-bg-[#3e7111] tw-z-10 item tw-rounded-sm tw-w-[200px] tw-h-[270px] tw-text-white  tw-p-1  tw-flex-shrink-0 tw-flex tw-justify-center tw-flex-col tw-items-start',  ]">
@@ -62,9 +62,9 @@ onMounted(async () => {
        </div>
       
 
-     
+       <router-view v-else />
   </div>
-  <router-view v-else />
+  
 </template> 
 
 <style scoped>
