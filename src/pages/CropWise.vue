@@ -3,7 +3,9 @@ import axios from "axios";
 import { createApp, onMounted, ref, watch } from "vue";
 import Navbar from '@/layout/Navbar.vue'
 import { doc } from "prettier";
+import {useRoute} from "vue-router"
 
+const route = useRoute();
 const barleyRecord = ref([]);
 const maizeRecord = ref([]);
 const soybeanRecord = ref([]);
@@ -66,37 +68,9 @@ onMounted(async () => {
   getCarousel();
 })
 
-// function translateSlideRight(direction){
-//   const elem = document.querySelector('#item');
-
-//   if(direction === 'right' && leftClicked.value != 0 ){
-//     rightCicked.value++;
-//     const rightMoveValue = 224;
-//     translateScale.value = `tw-translate-x-[-${224*rightCicked.value}px]` ;
-//     console.log("clicked", translateScale.value);
-//     elem.style.tra = `translateX(-${224*rightCicked.value})`;
-//   }
-//   if(direction === 'left'){
-//     leftClicked.value++;
-//     translateScale.value = `tw-translate-x-[${224*leftClicked.value}px]`;
-//     console.log("clicked", translateScale.value); 
-//     elem.style.transform = `translateX(${224*rightCicked.value})`;
-// }
-
-
-
-// # testing draggable js
-
-
-
-
-
-  
-
-
 </script>
 <template>
-    <div class="tw-flex tw-flex-col tw-bg-[#defcc2] tw-items-center tw-w-full">
+    <div v-if="!route.params.uri" class="tw-flex tw-flex-col tw-bg-[#defcc2] tw-items-center tw-w-full">
     
        <div class="tw-bg-[#3e7111] wrapper tw-my-10 tw-overflow-visible tw-w-[92.5%] tw-rounded-sm tw-relative tw-justify-center  tw-flex tw-flex-col tw-p-5">
          <span class="tw-font-bold tw-text-lg tw-px-3 tw-text-white">Crops Of Maize</span>
@@ -204,5 +178,6 @@ onMounted(async () => {
        </div>
  
     </div>
+    <router-view v-else />
  </template> 
  

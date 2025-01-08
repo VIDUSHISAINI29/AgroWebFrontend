@@ -4,7 +4,9 @@ import { onMounted, ref, watch } from "vue";
 import Navbar from '@/layout/Navbar.vue'
 import { doc } from "prettier";
 import AboutUs from '@/components/AboutUs.vue'
+import {useRoute} from "vue-router"
 
+const route = useRoute();
 const cropsRecord = ref([]);
 const fetchRecord = async(url) => {
   try {
@@ -43,7 +45,7 @@ onMounted(async () => {
  
 <template>
  
-  <div class="tw-flex tw-flex-col tw-bg-[#e1fcc8] tw-items-center tw-w-full">
+  <div v-if="!route.params.uri" class="tw-flex tw-flex-col tw-bg-[#e1fcc8] tw-items-center tw-w-full">
     <div class=" tw-my-10  tw-w-full  tw-rounded-sm tw-justify-center  tw-flex tw-flex-col tw-p-5">
          <div :class="['tw-flex tw-w-full tw-overflow-hidden tw-items-center tw-transition-transform    tw-gap-7 tw-relative wrapper tw-h-[50vh]  tw-p-2', translateScale]">
           
@@ -52,7 +54,7 @@ onMounted(async () => {
            <span class="tw-text-sm tw-px-1 tw-font-semibold ">{{ crop.crop }}</span>
            <span class="tw-text-sm tw-px-1 tw-font-semibold tw-text-wrap ">{{ crop.yieldTonsPerHectare.slice(0,4) }}  tons / hectare</span>
            <div class="tw-w-full tw-flex tw-justify-center">
-                <span class="tw-text-[12px] tw-font-semibold tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-p-1 tw-rounded-sm tw-my-2 tw-px-2  tw-cursor-pointer tw-text-white">Explore</span>
+                <router-link :to="`/home/${crop.index}`" class="tw-text-[12px] tw-font-semibold tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-p-1 tw-rounded-sm tw-my-2 tw-px-2  tw-cursor-pointer tw-text-white">Explore</router-link>
             </div>
         </div>
          </div>
@@ -62,6 +64,7 @@ onMounted(async () => {
 
      
   </div>
+  <router-view v-else />
 </template> 
 
 <style scoped>

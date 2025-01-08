@@ -3,8 +3,9 @@ import axios from "axios";
 import { createApp, onMounted, ref, watch } from "vue";
 import Navbar from '@/layout/Navbar.vue'
 import { doc } from "prettier";
+import {useRoute} from "vue-router"
 
-
+const route = useRoute();
 const eastRecord = ref([]);
 const westRecord = ref([]);
 const southRecord = ref([]);
@@ -36,7 +37,7 @@ onMounted(async () => {
 
 </script>
 <template>
-    <div class="tw-flex tw-flex-col tw-bg-[#defcc2] tw-items-center tw-w-full">
+    <div v-if="!route.params.uri" class="tw-flex tw-flex-col tw-bg-[#defcc2] tw-items-center tw-w-full">
     
        <div class="tw-bg-[#3e7111] banner  tw-overflow-hidden tw-w-full tw-h-[90vh] tw-text-center  tw-relative">
        
@@ -112,6 +113,8 @@ onMounted(async () => {
  
      
     </div>
+
+    <router-view v-else />
  </template> 
  
  <style scoped>
