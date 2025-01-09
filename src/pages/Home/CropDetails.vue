@@ -17,6 +17,7 @@ const fetch =  async(url) => {
     } 
 }
 async function loadData() {
+  if(props.uri){
     cropsData.value = await fetch(`${import.meta.env.VITE_BACKEND_URL}/crops-data`);
     cropsData.value.find((crop) => {
         if(crop.index === props.uri){
@@ -24,6 +25,11 @@ async function loadData() {
         }
     });
     console.log("selected value = ", selectedCrop.value);
+  }
+  else{
+    console.log("value ni aayi props ki");
+    
+  }
 }
 watch(() => props.uri, async() =>{
     await loadData();

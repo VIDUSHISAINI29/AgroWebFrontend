@@ -5,6 +5,7 @@ import Navbar from '@/layout/Navbar.vue'
 import { doc } from "prettier";
 import AboutUs from '@/components/AboutUs.vue'
 import {useRoute} from "vue-router"
+import CropDetails from './CropDetails.vue'
 
 const route = useRoute();
 const cropsRecord = ref([]);
@@ -59,10 +60,12 @@ onMounted(async () => {
         </div>
          </div>
          
-       </div>
+    </div>
       
-
-       <router-view v-else />
+   <div v-else>
+    <div>Vidushi is a graceful girl</div>
+    <CropDetails  :uri="route.params.uri"  />
+   </div>
   </div>
   
 </template> 

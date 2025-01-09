@@ -6,14 +6,14 @@
 <template>
     <div class="wineGlassTable tw-w-full tw-flex tw-flex-col  tw-items-end tw-h-[80vh]">
       <div
-      class="tw-flex tw-border-b tw-border-[#3e7111] tw-w-full tw-items-center tw-justify-between tw-p-2 tw-px-5">
+      class="md:tw-flex tw-hidden tw-border-b tw-border-[#3e7111] tw-w-full tw-items-center tw-justify-between tw-p-2 tw-px-5">
       <div>
-         <div>
+         
             <img
                class="tw-h-12 tw-cursor-pointer tw-w-14 tw-rounded-[50%]"
                src="/images/agroLogo.jpeg"
                alt="logo" />
-         </div>
+         
       </div>
       <div class="tw-flex tw-gap-5 tw-font-semibold tw-text-[#3e7111]">
         <div class="tw-group tw-relative tw-flex tw-cursor-pointer tw-flex-col tw-transition-colors            tw-duration-300 ">
@@ -98,9 +98,10 @@
          <span class=" tw-cursor-pointer tw-rounded-[4px]  tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-font-semibold tw-text-sm tw-py-2 tw-px-[10px] tw-text-[#61a622]">Logout</span>
       </div>
    </div>
+   <i class="ri-menu-5-fill tw-text-white tw-text-2xl tw-my-1 tw-mx-3"></i>
         <div class="tw-w-full tw-flex tw-justify-end tw-items-end tw-h-[50vh]">
           
-         <span class="text  tw-block tw-w-[570px] tw-mb-7 tw-text-[4rem]">
+         <span class="text  tw-block md:tw-w-[570px]  tw-w-[200px] md:tw-mb-7 tw-mb-12 tw-text-xl md:tw-text-[4rem]">
           Fields whisper stories of resilience, growth, and hope.
          </span>
         </div>
@@ -115,7 +116,7 @@
 
 }
 .text{
-   -webkit-text-stroke: 3px rgb(67, 144, 0); 
+   -webkit-text-stroke: 2px rgb(67, 144, 0); 
    color: transparent;
    animation: outline-animation 3s ease-in-out;
    transition: all;
