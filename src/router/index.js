@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { getAuth0 } from "../AuthServices.js";
+
 const router = createRouter({
    history: createWebHistory(import.meta.env.BASE_URL),
    routes: [
@@ -10,7 +11,6 @@ const router = createRouter({
       {
          path: "/",
          component: () => import("@/layout/AppLayout.vue"),
-         meta: { requiresAuth: true },
          children: [
             {
                path: "/home",
@@ -26,74 +26,28 @@ const router = createRouter({
                   },
                ],
             },
-            {
-               path: "/crop-wise",
-               name: "crop-wise",
-               component: () => import("@/pages/Crops/CropWise.vue"),
-               meta: { requiresAuth: true },
-               children: [
-                  {
-                     path: ":uri",
-                     name: "cropDetails",
-                     component: () => import("@/pages/Crops/CropDetails.vue"),
-                     props: true,
-                  },
-               ],
-            },
-            {
-               path: "/region-wise",
-               name: "region-wise",
-               component: () => import("@/pages/Region/RegionWise.vue"),
-               meta: { requiresAuth: true },
-               children: [
-                  {
-                     path: ":uri",
-                     name: "cropDetails",
-                     component: () => import("@/pages/Region/CropDetails.vue"),
-
-                     props: true,
-                  },
-               ],
-            },
-            {
-               path: "/soil-wise",
-               name: "soil-wise",
-               component: () => import("@/pages/Soil/SoilWise.vue"),
-               meta: { requiresAuth: true },
-               children: [
-                  {
-                     path: ":uri",
-                     name: "cropDetails",
-                     component: () => import("@/pages/Soil/CropDetails.vue"),
-                     props: true,
-                  },
-               ],
-            },
-            {
-               path: "/test",
-               name: "test",
-               component: () => import("@/pages/Test.vue"),
-               meta: { requiresAuth: true },
-            },
+            // other routes here...
          ],
       },
    ],
 });
-router.beforeEach(async (to, from, next) => {
-   const auth0 = getAuth0();
 
-   try {
-      const isAuthenticated = await auth0.isAuthenticated(); // Check authentication status
-      if (to.meta.requiresAuth && !isAuthenticated) {
+router.beforeResolve(async (to, from, next) => {
+   const auth0 = getAuth0();
+   const isAuthenticated = await auth0.isAuthenticated(); // Check authentication status
+
+   // Check if the route requires authentication and if the user is not authenticated
+   if (to.meta.requiresAuth && !isAuthenticated) {
+      // Check if we're already in the login callback route to prevent infinite redirects
+      if (to.path !== "/callback") {
          await auth0.loginWithRedirect({
-            appState: { targetUrl: to.fullPath },
+            appState: { targetUrl: to.fullPath }, // Store the target route
          });
       } else {
-         next();
+         next(); // If we are already on the callback route, proceed normally
       }
-   } catch (error) {
-      console.error("Auth0 Error:", error);
-      next(false); // Stop navigation on error
+   } else {
+      next(); // User is authenticated or route doesn't require authentication
    }
 });
 
