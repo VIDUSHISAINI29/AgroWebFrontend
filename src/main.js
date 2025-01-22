@@ -1,14 +1,18 @@
-import './assets/tailwind.css'
+import "./assets/tailwind.css";
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
+import { initAuth0 } from "./AuthServices.js";
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(createPinia());
+(async () => {
+   await initAuth0(); // Initialize Auth0 client
+   createApp(App).use(router).mount("#app");
+})(); // Provide Auth0 to the app
+// app.use(router);
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+// app.mount("#app");
