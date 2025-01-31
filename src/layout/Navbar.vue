@@ -104,14 +104,16 @@
             </span>
          </div>
       </div>
-      <i class="ri-menu-5-fill tw-mx-3 tw-my-1 tw-text-2xl tw-text-white"></i>
+      <i class="ri-menu-5-fill md:tw-hidden tw-mx-3 tw-my-1 tw-text-2xl tw-text-white"></i>
+
       <div
-         class="tw-flex tw-h-[50vh] tw-w-1/2 tw-items-end tw-justify-end tw-bg-purple-300">
+         class="tw-flex tw-h-[45vh]  tw-items-end tw-justify-end ">
          <span
-            class="text tw-mb-7 tw-w-[200px] tw-bg-red-300 tw-text-xl md:tw-w-[500px] md:tw-text-[4rem]">
+            class="text  md:tw-w-[600px]  tw-text-xl tw-leading-[60px] md:tw-text-6xl">
             Fields whisper stories of resilience, growth, and hope.
          </span>
       </div>
+
    </div>
 </template>
 <style scoped>
@@ -124,6 +126,6 @@
    -webkit-text-stroke: 2px rgb(67, 144, 0);
    color: transparent;
    transition: all;
-   line-height: 100px;
+   
 }
 </style>

@@ -50,7 +50,7 @@ onMounted(async () => {
            <span class="tw-text-sm tw-px-1 tw-font-semibold tw-text-[#3e7111]">{{ crop.crop }}</span>
            <span class="tw-text-sm tw-px-1 tw-font-semibold tw-text-wrap tw-text-[#3e7111]">{{ crop.yieldTonsPerHectare.slice(0,4) }}  tons / hectare</span>
            <div class="tw-w-full tw-flex tw-justify-center">
-                <span class="tw-text-[12px] tw-font-semibold tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-p-1 tw-rounded-sm tw-my-2 tw-px-2  tw-text-white tw-cursor-pointer">Explore</span>
+                <router-link :to="`/region-wise/${crop.index}`" class="tw-text-[12px] tw-font-semibold tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-p-1 tw-rounded-sm tw-my-2 tw-px-2  tw-text-white tw-cursor-pointer">Explore</router-link>
             </div>
         </div>
       
@@ -85,7 +85,7 @@ onMounted(async () => {
          <span class="tw-text-sm tw-px-1 tw-font-semibold tw-text-[#3e7111]">{{ crop.crop }}</span>
          <span class="tw-text-sm tw-px-1 tw-font-semibold tw-text-wrap tw-text-[#3e7111]">{{ crop.yieldTonsPerHectare.slice(0,4) }}  tons / hectare</span>
          <div class="tw-w-full tw-flex tw-justify-center">
-              <span class="tw-text-[12px] tw-font-semibold tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-p-1 tw-rounded-sm tw-my-2 tw-px-2  tw-text-white tw-cursor-pointer">Explore</span>
+              <router-link :to="``" class="tw-text-[12px] tw-font-semibold tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)]  tw-p-1 tw-rounded-sm tw-my-2 tw-px-2  tw-text-white tw-cursor-pointer">Explore</router-link>
           </div>
       </div>
     
@@ -114,7 +114,9 @@ onMounted(async () => {
      
     </div>
 
-    <router-view v-else />
+    <div v-else>
+         <CropDetails :uri="route.params.uri" />
+      </div>
  </template> 
  
  <style scoped>

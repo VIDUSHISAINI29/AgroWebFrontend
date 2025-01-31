@@ -1,45 +1,42 @@
-<script setup>
-import axios from 'axios';
-import { onMounted, ref, watch } from 'vue';
-const props = defineProps({
-    uri: String,
-});
-const cropsData = ref(null);
-const selectedCrop = ref(null);
+<!-- <script setup>
 
+import { ref } from 'vue';
+import Password from 'primevue/password';
+const value = ref(null);
 
-const fetch =  async(url) => {
-    try {
-        const result = await axios.get(url);
-        return result.data;
-    } catch (error) {
-        console.log("error in fetching at frontend in detail page.");
-    } 
-}
-async function loadData() {
-    cropsData.value = await fetch(`${import.meta.env.VITE_BACKEND_URL}/crops-data`);
-    cropsData.value.map((crop) => {
-        if(crop.index === props.uri){
-            selectedCrop.value = crop;
-        }
-    });
-    console.log("selected value = ", selectedCrop.value);
-}
-watch(() => props.uri, async() =>{
-    await loadData();
-})
-onMounted( async() => {
-    await loadData();
-});
+</script> -->
 
-console.log("hey details");
+<!-- <template>
+    <div class="card tw-w-[500px] flex justify-center">
+        <Password  :pt="{
+                              	overlay: () => ({
+                                 class: 'tw-w-96',
+                              }),
+                           }"  v-model="value" :feedback="false" />
 
-</script>
+    </div>
+</template> -->
+
 <template>
-
-
-
+    <div class="card flex justify-center">
+        <Select  :pt="{
+                              overlay: () => ({
+                                 class: 'tw-w-64',
+                              }),
+                           }" v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Select a City" class="tw-w-full md:w-56" />
+    </div>
 </template>
-<style scoped>
 
-</style>
+<script setup>
+import { ref } from "vue";
+
+const selectedCity = ref();
+const cities = ref([
+    { name: 'New York', code: 'NY' },
+    { name: 'Rome', code: 'RM' },
+    { name: 'London', code: 'LDN' },
+    { name: 'Istanbul', code: 'IST' },
+    { name: 'Paris', code: 'PRS' }
+]);
+</script>
+

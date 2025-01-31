@@ -4,8 +4,8 @@ import { onMounted, ref, watch } from "vue";
 import Navbar from "@/layout/Navbar.vue";
 import { doc } from "prettier";
 import AboutUs from "@/components/AboutUs.vue";
+import CropDetails from './CropDetails.vue'
 import { useRoute } from "vue-router";
-import CropDetails from "./CropDetails.vue";
 
 const route = useRoute();
 const cropsRecord = ref([]);
@@ -24,7 +24,7 @@ async function loadData() {
    );
    console.log("crops = ", cropsRecord.value);
 }
-function assignAnimationDelay() {
+async function assignAnimationDelay() {
    let i = 0;
 
    const totalItems = cropsRecord.value.length;
@@ -37,7 +37,7 @@ function assignAnimationDelay() {
 }
 onMounted(async () => {
    await loadData();
-   assignAnimationDelay();
+   await assignAnimationDelay();
 });
 </script>
 
@@ -79,7 +79,6 @@ onMounted(async () => {
       </div>
 
       <div v-else>
-         <div>Vidushi is a graceful girl</div>
          <CropDetails :uri="route.params.uri" />
       </div>
    </div>
@@ -113,6 +112,7 @@ onMounted(async () => {
    height: 50vh;
 }
 </style>
+<!-- 
 <script>
 import { getAuth0 } from "../../AuthServices.js";
 
@@ -136,4 +136,4 @@ export default {
          });
    },
 };
-</script>
+</script> -->

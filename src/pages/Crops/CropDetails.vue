@@ -4,9 +4,5 @@ import CropDetails from '@/components/CropDetails.vue'
 
 </script>
 <template>
-
-    <div>
-        <CropDetails />
-    </div>
-
+<CropDetails />
 </template>
