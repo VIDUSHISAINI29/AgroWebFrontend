@@ -69,7 +69,7 @@ onMounted(async () => {
                </span>
                <div class="tw-flex tw-w-full tw-justify-center">
                   <router-link
-                     :to="`/home/${crop.index}`"
+                     :to="`home/${crop.index}`"
                      class="tw-my-2 tw-cursor-pointer tw-rounded-sm tw-bg-[radial-gradient(circle,_#3a434a,_#2a3238)] tw-p-1 tw-px-2 tw-text-[12px] tw-font-semibold tw-text-white">
                      Explore
                   </router-link>
@@ -78,9 +78,9 @@ onMounted(async () => {
          </div>
       </div>
 
-      <div v-else>
+      <!-- <div v-else>
          <CropDetails :uri="route.params.uri" />
-      </div>
+      </div> -->
    </div>
 </template>
 

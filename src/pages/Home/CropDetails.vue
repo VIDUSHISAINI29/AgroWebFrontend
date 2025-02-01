@@ -23,9 +23,9 @@ async function loadData() {
     cropsData.value = await fetch(`${import.meta.env.VITE_BACKEND_URL}/crops-data`);
     cropsData.value.map((crop) => {
         if(crop.index === props.uri){
+            crop.value.yieldTonsPerHectare = selectedCrop.value.yieldTonsPerHectare.slice(0,4)
+            crop.value.tempratureCelsius = selectedCrop.value.tempratureCelsius.slice(0,5)
             selectedCrop.value = crop;
-            selectedCrop.value.yieldTonsPerHectare = selectedCrop.value.yieldTonsPerHectare.slice(0,4)
-            selectedCrop.value.tempratureCelsius = selectedCrop.value.tempratureCelsius.slice(0,5)
         }
     });
     cropsValuesArray.value = ['yieldTonsPerHectare', 'region', 'soilType', 'weatherCondition', 'tempratureCelsius', 'irrigationUsed', 'fertilizeUsed' , 'ranfallMM', 'daysToHarvest']
